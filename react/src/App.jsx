@@ -1,5 +1,6 @@
 
-import './App.css'
+import './assets/CSS/main.css'
+
 
 function App() {
  
