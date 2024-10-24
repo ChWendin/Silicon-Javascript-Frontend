@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import mainLogga from '../assets/Images/main-logga.svg'
+
 function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false);
   
