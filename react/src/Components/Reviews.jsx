@@ -3,6 +3,7 @@ import starFull from '../assets/Images/star-full.svg'
 import starEmpty from '../assets/Images/star-empty.svg'
 import personGirl from '../assets/Images/person-girl.svg'
 import personBoy from '../assets/Images/person-boy.svg'
+import iconQuotes from '../assets/Images/icon-quotes.svg'
 
 const Reviews = () => {
   return (
@@ -16,7 +17,7 @@ const Reviews = () => {
 <div className="review-card">
     <div className="review-img">
         <div className="quotes-div">
-            <img className="quotes" src="/Assets/icon-quotes.svg" alt="quotes icon" />
+            <img className="quotes" src={iconQuotes} alt="quotes icon" />
         </div>
 
         <div className="stars">
@@ -54,7 +55,7 @@ const Reviews = () => {
 
     <div className="review-img">
         <div className="quotes-div">
-            <img className="quotes" src="/Assets/icon-quotes.svg" alt="quotes icon" />
+            <img className="quotes" src={iconQuotes} alt="quotes icon" />
         </div>
         
         <div className="stars">
