@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import mainLogga from '../assets/Images/main-logga.svg'
 
 function Header() {
@@ -6,9 +6,16 @@ function Header() {
   
     const handleToggleChange = () => {
       setIsDarkMode(!isDarkMode);
-      // Lägg till logik för att ändra dark mode här, t.ex. byta CSS-tema.
     };
-  
+    useEffect(() => {
+      // Lägg till eller ta bort klassen 'dark-mode' på <html>-elementet
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }, [isDarkMode]); // Körs varje gång `isDarkMode` uppdateras  
+    
     return (
       <header>
         <div className="container">
