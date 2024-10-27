@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <main id="gradiant" className="container">
             <div id="headline" className="headline">
-                    <d4>Manage All Your</d4>
-                    <d4> Money in One App</d4>
+                    <h1>Manage All Your</h1>
+                    <h1> Money in One App</h1>
             </div>
             
             
