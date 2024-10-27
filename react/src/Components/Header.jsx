@@ -3,19 +3,28 @@ import mainLogga from '../assets/Images/main-logga.svg'
 import { NavLink, Link } from 'react-router-dom';
 
 function Header() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-  
-    const handleToggleChange = () => {
-      setIsDarkMode(!isDarkMode);
-    };
-    useEffect(() => {
-      // Lägg till eller ta bort klassen 'dark-mode' på <html>-elementet
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }, [isDarkMode]); // Körs varje gång `isDarkMode` uppdateras  
+  // Kolla localStorage för att sätta initialt värde på `isDarkMode`
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem('isDarkMode');
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+  });
+
+  const handleToggleChange = () => {
+    setIsDarkMode(prevMode => {
+      const newMode = !prevMode;
+      localStorage.setItem('isDarkMode', JSON.stringify(newMode));
+      return newMode;
+    });
+  };
+
+  useEffect(() => {
+    // Uppdatera dark mode-klassen på <html>-elementet
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
     
     return (
       <header>
