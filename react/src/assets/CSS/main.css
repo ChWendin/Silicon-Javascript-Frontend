@@ -1577,6 +1577,11 @@ h4 {
   border-radius: 0.5rem;
 }
 
+.consultation-card span {
+  font-size: .8rem;
+  color: firebrick;
+}
+
 .consultation-card button {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -1584,6 +1589,7 @@ h4 {
   border-radius: 0.5rem;
   border: none;
   margin-top: 5rem;
+  cursor: pointer;
 }
 
 .consultation-card input {
@@ -1663,6 +1669,31 @@ h4 {
   background-color: var(--color-secondary-bg);
   border-radius: 0.3rem;
   padding: 0.8rem;
+}
+
+.submitConfirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-sub-form-bg);
+  border-radius: .5rem;
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  
+}
+
+.btn-appointment {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.8rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+  border: none;
+  margin-top: 5rem;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

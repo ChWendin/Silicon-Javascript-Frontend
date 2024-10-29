@@ -2,6 +2,7 @@ import React from 'react'
 
 import bxEnvelope from '../assets/Images/bx-envelope.svg'
 import addGroup from '../assets/Images/add-group.svg'
+import ContactForm from './ContactForm'
 
 const ContactMain = () => {
   return (
@@ -35,25 +36,8 @@ const ContactMain = () => {
                     </div>
                 </div>
     
-    
-                <div className="consultation-card">
-                    <h2>Get Online Consultation</h2>
-                    <div className="forms">
-                        <form>
-                            <label for="full name">Full Name</label>
-                            <input type="text" id="full name" name="full name" placeholder="Enter your full name" required />
-                        </form>
-                        <form>
-                            <label for="email">Email adress</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-                        </form>
-                        <form>
-                            <label for="specialist">Specialist</label>
-                            <input type="text" id="specialist" name="specialist" placeholder="choose a specialist" />
-                        </form>
-                    </div>
-                    <button className="btn-appointment">Make an appointment</button>
-                </div>
+                <ContactForm />
+               
             </div>
         </main>
   )
