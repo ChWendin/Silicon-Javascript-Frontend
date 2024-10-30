@@ -3,7 +3,8 @@ import bluePhone from '../assets/Images/blue-phone.svg'
 import blueArrow from '../assets/Images/blue-arrow.svg'
 import greenIcon from '../assets/Images/green-icon.svg'
 import greenArrow from '../assets/Images/green-arrow.svg'
-import bellIcon from '../assets/Images/bell-icon.svg'
+
+import NewsletterForm from './NewsletterForm'
 
 const Faq = () => {
   return (
@@ -132,32 +133,7 @@ const Faq = () => {
         </a>
     </div>
 
-
-
-    
-
-    <div className="sub-container">
-        <div className="sub-flex">
-            <img src={bellIcon} alt="bell icon" />
-            <div className="sub-headline">
-                <p>Subscribe to our newsletter</p> 
-                <p className="hidden">to stay informed about latest updates</p> 
-                    
-
-            </div>
-        </div>
-        
-    
-        <div >
-            <form className="sub-form">
-           
-                <input className="form-input" type="email" name="email" placeholder=" &#xf003  Your email" />
-
-                <button className="sub-btn">Subscribe</button>
-            </form>
-        </div> 
-    </div>
-
+    <NewsletterForm />
 
 </div>   
 </section>
@@ -165,3 +141,7 @@ const Faq = () => {
 }
 
 export default Faq
+
+
+    
+
