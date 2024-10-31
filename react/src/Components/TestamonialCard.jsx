@@ -1,8 +1,7 @@
 import React from 'react'
 import iconQuotes from '../assets/Images/icon-quotes.svg'
-import starFull from '../assets/Images/star-full.svg'
-import starEmpty from '../assets/Images/star-empty.svg'
 import StarRating from './StarRating'
+
 
 const TestamonialCard = ({card}) => {
   return (
