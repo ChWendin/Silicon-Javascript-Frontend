@@ -1039,6 +1039,10 @@ header .container {
     font-size: 40px;
     font-weight: 800;
   }
+  .review-cards {
+    display: flex;
+    gap: 1rem;
+  }
   .review-card {
     display: flex;
     flex-direction: column;
