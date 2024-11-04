@@ -19,12 +19,26 @@ const ContactForm = () => {
         const {name, value} = e.target
         setFormData ({...formData, [name]: value})
 
+        let error = '';
         if (value.trim() === '') {
-            setErrors(prevErrors => ({...prevErrors, [name]: `This field is required`}))
+            error = 'This field is required';
         } else {
-            setErrors(prevErrors => ({...prevErrors, [name]: ''})) 
+            if (name === 'fullName') {
+                const nameRegex = /^[a-zA-Z\s]+$/;
+                if (!nameRegex.test(value)) {
+                    error = 'Only letters and spaces are allowed';
+                }
+            }
+            if (name === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    error = 'Please enter a valid email address';
+                }
+            }
         }
-    }
+        
+        setErrors(prevErrors => ({ ...prevErrors, [name]: error }));
+    };
     
     const handleOk = () => {
        setSubmitted(false) 

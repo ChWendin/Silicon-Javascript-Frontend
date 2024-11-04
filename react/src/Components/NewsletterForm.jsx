@@ -9,12 +9,22 @@ const NewsletterForm = () => {
     const handleChange = (e) => {
         const {name, value} = e.target
         setFormData ({...formData, [name]: value})
-
+        
+        let error = '';
         if (value.trim() === '') {
-            setErrors(prevErrors => ({...prevErrors, [name]: `This field is required`}))
+            error = 'This field is required';
         } else {
-            setErrors(prevErrors => ({...prevErrors, [name]: ''})) 
-        }
+            if (name === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    error = 'Please enter a valid email address';
+                }
+            }
+        } 
+        setErrors(prevErrors => ({...prevErrors, [name]: error})) 
+        
+      
+        
     }
     
     const handleOk = () => {
