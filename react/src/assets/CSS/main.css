@@ -30,6 +30,7 @@ body {
   --color-light-blue: #F3F6FF;
   --color-main-bg: #ffffff;
   --color-secondary-bg: #f3f6ff;
+  --color-tersiary-bg: #ffffff;
   --color-gradient-bg: radial-gradient(120.91% 118.4% at 50% 100%, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);
   --color-btn-primary: #6366f1;
   --color-btn-secondary: #f3f6ff;
@@ -46,6 +47,7 @@ body {
   color-scheme: dark;
   --color-main-bg: #0B0F19;
   --color-secondary-bg: #ffffff0a;
+  --color-tersiary-bg: #141420;
   --color-gradient-bg: radial-gradient(120.91% 118.4% at 50% 100%, rgba(99, 102, 241, 0.10) 0%, rgba(218, 70, 239, 0.05) 41.83%, rgba(241, 244, 253, 0.07) 82.52%);
   --color-btn-primary: #6366f1;
   --color-btn-secondary: #6366f114;
@@ -1650,7 +1652,7 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background-color:black;
+  background-color:var(--color-tersiary-bg);
   padding: 4rem;
   border-radius: 0.5rem;
 }
@@ -1677,7 +1679,19 @@ h4 {
   padding: 0.7rem;
   width: 100%;
   background-color: var(--color-card-fill);
+}
+.consultation-card select {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  padding: 0.7rem;
+  width: 100%;
+  background-color: var(--color-card-fill);
+  cursor: pointer;
+}
   
+.dropdown {
+  color: var(--color-dark);
 }
 
 .forms {

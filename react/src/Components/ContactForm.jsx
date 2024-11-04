@@ -12,6 +12,9 @@ const ContactForm = () => {
     const [errors, setErrors] = useState({})
     const [submitted, setSubmitted] = useState(false)
     
+    
+        
+    
     const handleChange = (e) => {
         const {name, value} = e.target
         setFormData ({...formData, [name]: value})
@@ -81,10 +84,16 @@ const ContactForm = () => {
                 <span>{errors.email && errors.email}</span>
             </div>
             <div>
-                <label htmlFor="specialist">Specialist</label>
-                <input type="text" value={formData.specialist} onChange={handleChange} id="specialist" name="specialist" required />
-                <span>{errors.specialist && errors.specialist}</span>
+            <label htmlFor="specialist">Specialist</label>
+            <select id="specialist" value={formData.specialist} onChange={handleChange} name='specialist' required> 
+                <option className='dropdown' value=""></option>
+                <option className='dropdown' value="frontend">Frontend</option>
+                <option className='dropdown' value="backend">Backend</option>
+                <option className='dropdown' value="fullstack">Fullstack</option>
+            </select>
+            <span>{errors.specialist && errors.specialist}</span>
             </div>
+            
         <button type="submit">Make an appointment</button>
         </form>
     </div>
@@ -92,3 +101,5 @@ const ContactForm = () => {
 }
 
 export default ContactForm
+            
+        
