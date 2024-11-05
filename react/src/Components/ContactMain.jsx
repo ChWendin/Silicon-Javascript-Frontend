@@ -3,12 +3,13 @@ import React from 'react'
 import bxEnvelope from '../assets/Images/bx-envelope.svg'
 import addGroup from '../assets/Images/add-group.svg'
 import ContactForm from './ContactForm'
+import Breadcrumb from './Breadcrumb'
 
 const ContactMain = () => {
   return (
     <main className="container">
             <div className="main-wrapper">
-                <span>placeholder - Contact</span>
+                <Breadcrumb/>
                 <h1>Contact us</h1>
                 <div className="contact-wrapper">
                     
