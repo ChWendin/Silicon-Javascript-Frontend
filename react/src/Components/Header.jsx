@@ -9,6 +9,8 @@ function Header() {
     return savedDarkMode ? JSON.parse(savedDarkMode) : false;
   });
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleToggleChange = () => {
     setIsDarkMode(prevMode => {
       const newMode = !prevMode;
@@ -16,6 +18,11 @@ function Header() {
       return newMode;
     });
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState);
+  };
+
 
   useEffect(() => {
     // Uppdatera dark mode-klassen på <html>-elementet
@@ -58,11 +65,24 @@ function Header() {
             <i className="fa-thin fa-user-large"></i>
             <span>Sign in / up</span>
           </Link>
-  
-          <button className="mobile-menu">
+          
+          <button className="mobile-menu" onClick={toggleMenu}>
             <i className="fa-regular fa-bars"></i>
           </button>
+
+
         </div>
+
+        {/* Mobilmeny som visas när `isMenuOpen` är true */}
+      {isMenuOpen && (
+        <div className="mobile-menu-dropdown">
+          <NavLink className="dropdown-link" to="/" onClick={toggleMenu}>Features</NavLink>
+          <NavLink className="dropdown-link" to="/Contact" onClick={toggleMenu}>Contact</NavLink>
+          {/* Lägg till fler länkar här om du vill */}
+        </div>
+      )}
+    
+
       </header>
     );
   }
