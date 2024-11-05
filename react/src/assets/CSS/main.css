@@ -1150,8 +1150,13 @@ header .container {
   gap: 1rem;
   padding: 1rem;
   background-color: var(--color-card-fill);
-  
 }
+.first-card {
+  border-radius: 7px 7px 0 0;
+}
+.last-card {
+  border-radius: 0 0 7px 7px;
+}  
 
 .card-faq p {
   color: var(--color-text);

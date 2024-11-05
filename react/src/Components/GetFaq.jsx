@@ -20,10 +20,12 @@ const GetFaq = () => {
  
  return (
 <div className="card-faq-container">
-    {
-    faqCards.map((card, index) => (<FaqCard  key={card.id} style={{
-        borderRadius: index === 0 ? '7px 7px 0 0' : index === faqCards.length - 1 ? '0 0 7px 7px' : '0'
-      }} card={card} />)) 
+            {faqCards.map((card, index) => (
+                <FaqCard
+                    key={card.id}
+                    card={card}
+                    className={`card-faq ${index === 0 ? 'first-card' : ''} ${index === faqCards.length - 1 ? 'last-card' : ''}`}
+                />)) 
     }
 </div>
   )

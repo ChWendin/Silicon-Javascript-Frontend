@@ -3,7 +3,6 @@ import mainLogga from '../assets/Images/main-logga.svg'
 import { NavLink, Link } from 'react-router-dom';
 
 function Header() {
-  // Kolla localStorage för att sätta initialt värde på `isDarkMode`
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedDarkMode = localStorage.getItem('isDarkMode');
     return savedDarkMode ? JSON.parse(savedDarkMode) : false;
@@ -25,7 +24,6 @@ function Header() {
 
 
   useEffect(() => {
-    // Uppdatera dark mode-klassen på <html>-elementet
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -73,12 +71,11 @@ function Header() {
 
         </div>
 
-        {/* Mobilmeny som visas när `isMenuOpen` är true */}
+        
       {isMenuOpen && (
         <div className="mobile-menu-dropdown">
           <NavLink className="dropdown-link" to="/" onClick={toggleMenu}>Features</NavLink>
           <NavLink className="dropdown-link" to="/Contact" onClick={toggleMenu}>Contact</NavLink>
-          {/* Lägg till fler länkar här om du vill */}
         </div>
       )}
     

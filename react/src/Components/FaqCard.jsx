@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const FaqCard = ({card}) => {
+const FaqCard = ({card, className}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleVisibility = () => {
@@ -8,7 +8,7 @@ const FaqCard = ({card}) => {
     };
   
     return (
-    <div className="card-faq">
+    <div className={className}>
         <div className='faqTitle'>
         <span>{card.title}</span>
         <button className={`sub-knapp ${isOpen ? 'sub-knapp-active' : ''}`} onClick={toggleVisibility} >
