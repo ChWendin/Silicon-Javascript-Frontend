@@ -24,7 +24,7 @@ const ContactForm = () => {
             error = 'This field is required';
         } else {
             if (name === 'fullName') {
-                const nameRegex = /^[a-zA-Z\s]+$/;
+                const nameRegex = /^[a-öA-Ö\s\-]+$/;
                 if (!nameRegex.test(value)) {
                     error = 'Only letters and spaces are allowed';
                 }
