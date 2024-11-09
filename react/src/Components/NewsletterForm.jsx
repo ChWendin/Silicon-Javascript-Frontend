@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import bellIcon from '../assets/Images/bell-icon.svg'
 
+
 const NewsletterForm = () => {
     const [formData, setFormData] = useState({ email: '' })
     const [errors, setErrors] = useState({})
@@ -88,7 +89,10 @@ const NewsletterForm = () => {
     <div >
         <form className="sub-form" noValidate onSubmit={handleSubmit}>
             <div className="subFormFlex">
-            <input className="form-input" type="email"  value={formData.email} onChange={handleChange} name="email" placeholder=" &#xf003  Your email" />
+                <div className="input-container">
+                <i className="fa-regular fa-envelope input-icon" ></i>
+                    <input className="form-input" type="email"  value={formData.email} onChange={handleChange} name="email" placeholder = 'Your email' />
+                </div>
             <button type='submit' className="sub-btn">Subscribe</button>
             </div>
             <span>{errors.email && errors.email}</span>
